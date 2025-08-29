@@ -1,0 +1,534 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>ClientPlugin</AssemblyName>
+    <Product>My first plugin</Product>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>ClientPlugin</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+  <ItemGroup>
+  <Reference Include="Archipelago.MultiClient.Net">
+  <HintPath>/home/gemdude46/repos/libraries/Archipelago.MultiClient.Net-Newtonsoftless/Archipelago.MultiClient.Net/bin/Release/net6.0/publish/Archipelago.MultiClient.Net.dll</HintPath>
+</Reference>
+  <Reference Include="Achievements.Handler.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Achievements.Handler.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Achievements.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Achievements.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="ACTk.Examples.Genuine.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/ACTk.Examples.Genuine.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="ACTk.Examples.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/ACTk.Examples.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="ACTk.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/ACTk.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Alchemy">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Alchemy.dll</HintPath>
+</Reference>
+<Reference Include="AloneSoft.VeryAnimation">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/AloneSoft.VeryAnimation.dll</HintPath>
+</Reference>
+<Reference Include="Assembly-CSharp">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Assembly-CSharp.dll</HintPath>
+</Reference>
+<Reference Include="AudioConductor">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/AudioConductor.dll</HintPath>
+</Reference>
+<Reference Include="Beans.Unity.Collections">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Beans.Unity.Collections.dll</HintPath>
+</Reference>
+<Reference Include="Beans.Unity.Mathematics">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Beans.Unity.Mathematics.dll</HintPath>
+</Reference>
+<Reference Include="BX.App.InputSystemManager.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BX.App.InputSystemManager.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="BX.App.Language.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BX.App.Language.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="BX.UI.CommitHashText">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BX.UI.CommitHashText.dll</HintPath>
+</Reference>
+<Reference Include="BxUni.BuiltInClassExtensions.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BxUni.BuiltInClassExtensions.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="BxUni.DebugConsole.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BxUni.DebugConsole.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="BxUni.EncAddressables">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BxUni.EncAddressables.dll</HintPath>
+</Reference>
+<Reference Include="BxUni.LeaderboardProvider">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BxUni.LeaderboardProvider.dll</HintPath>
+</Reference>
+<Reference Include="BxUni.SingletonClasses.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/BxUni.SingletonClasses.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Cinemachine">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Cinemachine.dll</HintPath>
+</Reference>
+<Reference Include="Common.EncryptCounter">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Common.EncryptCounter.dll</HintPath>
+</Reference>
+<Reference Include="Common.Scroll.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Common.Scroll.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Common.SerializableDictionary.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Common.SerializableDictionary.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="com.rlabrecque.steamworks.net">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/com.rlabrecque.steamworks.net.dll</HintPath>
+</Reference>
+<Reference Include="DebugConsole.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/DebugConsole.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Deform">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Deform.dll</HintPath>
+</Reference>
+<Reference Include="GameFlowControlKit">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/GameFlowControlKit.dll</HintPath>
+</Reference>
+<Reference Include="__Generated">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/__Generated.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppMicrosoft.NET.StringTools">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppMicrosoft.NET.StringTools.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppMono.Security">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppMono.Security.dll</HintPath>
+</Reference>
+<Reference Include="Il2Cppmscorlib">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2Cppmscorlib.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Configuration">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Configuration.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Core">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Core.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Data">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Data.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Drawing">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Drawing.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.IO.Compression">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.IO.Compression.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.IO.Compression.FileSystem">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.IO.Compression.FileSystem.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Net.Http">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Net.Http.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Numerics">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Numerics.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Runtime.CompilerServices.Unsafe">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Runtime.CompilerServices.Unsafe.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Runtime.Serialization">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Runtime.Serialization.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Xml">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Xml.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppSystem.Xml.Linq">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Il2CppSystem.Xml.Linq.dll</HintPath>
+</Reference>
+<Reference Include="IngameDebugConsole.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/IngameDebugConsole.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="LitMotion">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/LitMotion.dll</HintPath>
+</Reference>
+<Reference Include="LitMotion.Extensions">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/LitMotion.Extensions.dll</HintPath>
+</Reference>
+<Reference Include="MasterMemory">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/MasterMemory.dll</HintPath>
+</Reference>
+<Reference Include="MessagePack.Annotations">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/MessagePack.Annotations.dll</HintPath>
+</Reference>
+<Reference Include="MessagePack">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/MessagePack.dll</HintPath>
+</Reference>
+<Reference Include="MstMemory.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/MstMemory.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Newtonsoft.Json">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Newtonsoft.Json.dll</HintPath>
+</Reference>
+<Reference Include="ParticleImage">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/ParticleImage.dll</HintPath>
+</Reference>
+<Reference Include="Polyperfect.Animals">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Polyperfect.Animals.dll</HintPath>
+</Reference>
+<Reference Include="Polyperfect.Common">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Polyperfect.Common.dll</HintPath>
+</Reference>
+<Reference Include="Ranking.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Ranking.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Ranking.System.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Ranking.System.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Save.Handler.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Save.Handler.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Save.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Save.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="sc.stylizedwater2.runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/sc.stylizedwater2.runtime.dll</HintPath>
+</Reference>
+<Reference Include="SerializeDictionary.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/SerializeDictionary.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Steam.Achievements.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Steam.Achievements.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Steam.Ranking.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Steam.Ranking.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Steam.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Steam.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Steam.Save.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Steam.Save.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="UniRx">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UniRx.dll</HintPath>
+</Reference>
+<Reference Include="UniTask.Addressables">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UniTask.Addressables.dll</HintPath>
+</Reference>
+<Reference Include="UniTask">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UniTask.dll</HintPath>
+</Reference>
+<Reference Include="Unity.2D.Animation.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.2D.Animation.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Unity.2D.IK.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.2D.IK.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Addressables">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Addressables.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Burst">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Burst.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Burst.Unsafe">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Burst.Unsafe.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Collections">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Collections.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Collections.LowLevel.ILSupport">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.AccessibilityModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.AccessibilityModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.AIModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.AIModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.AndroidJNIModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.AndroidJNIModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.AnimationModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.AnimationModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.AssetBundleModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.AssetBundleModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.AudioModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.AudioModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ClothModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ClothModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ClusterInputModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ClusterInputModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ClusterRendererModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ClusterRendererModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ContentLoadModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ContentLoadModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.CoreModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.CoreModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.CrashReportingModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.CrashReportingModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.DirectorModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.DirectorModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.DSPGraphModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.DSPGraphModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.GameCenterModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.GameCenterModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.GIModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.GIModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.GridModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.GridModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.HotReloadModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.HotReloadModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ImageConversionModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ImageConversionModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.IMGUIModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.IMGUIModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.InputLegacyModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.InputLegacyModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.InputModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.InputModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.JSONSerializeModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.JSONSerializeModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.LocalizationModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.LocalizationModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ParticleSystemModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ParticleSystemModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.PerformanceReportingModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.PerformanceReportingModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.Physics2DModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.Physics2DModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.PhysicsModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.PhysicsModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ProfilerModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ProfilerModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.PropertiesModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.PropertiesModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.ScreenCaptureModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.ScreenCaptureModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.SharedInternalsModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.SharedInternalsModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.SpriteMaskModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.SpriteMaskModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.SpriteShapeModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.SpriteShapeModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.StreamingModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.StreamingModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.SubstanceModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.SubstanceModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.SubsystemsModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.SubsystemsModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TerrainModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TerrainModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TerrainPhysicsModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TextCoreFontEngineModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TextCoreTextEngineModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TextRenderingModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TextRenderingModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TilemapModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TilemapModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.TLSModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.TLSModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UI">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UI.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UIElementsModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UIElementsModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UIModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UIModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UmbraModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UmbraModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityAnalyticsModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityConnectModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityConnectModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityCurlModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityCurlModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityTestProtocolModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityTestProtocolModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityWebRequestAudioModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityWebRequestModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityWebRequestModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityWebRequestTextureModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.UnityWebRequestWWWModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.VehiclesModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.VehiclesModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.VFXModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.VFXModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.VideoModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.VideoModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.VirtualTexturingModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.VirtualTexturingModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.VRModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.VRModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.WindModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.WindModule.dll</HintPath>
+</Reference>
+<Reference Include="UnityEngine.XRModule">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/UnityEngine.XRModule.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Entities">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Entities.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Entities.Hybrid">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Entities.Hybrid.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Entities.Hybrid.HybridComponents">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Entities.Hybrid.HybridComponents.dll</HintPath>
+</Reference>
+<Reference Include="Unity.InputSystem">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.InputSystem.dll</HintPath>
+</Reference>
+<Reference Include="Unity.InputSystem.ForUI">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.InputSystem.ForUI.dll</HintPath>
+</Reference>
+<Reference Include="Unity.InternalAPIEngineBridge.001">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Localization">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Localization.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Mathematics">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Mathematics.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Mathematics.Extensions">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Mathematics.Extensions.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Physics">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Physics.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Physics.Hybrid">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Physics.Hybrid.dll</HintPath>
+</Reference>
+<Reference Include="Unity.ProBuilder">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.ProBuilder.dll</HintPath>
+</Reference>
+<Reference Include="Unity.ProBuilder.KdTree">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.ProBuilder.KdTree.dll</HintPath>
+</Reference>
+<Reference Include="Unity.ProBuilder.Poly2Tri">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.ProBuilder.Poly2Tri.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Profiling.Core">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Profiling.Core.dll</HintPath>
+</Reference>
+<Reference Include="Unity.RenderPipelines.Core.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Unity.RenderPipelines.Universal.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+</Reference>
+<Reference Include="Unity.ResourceManager">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.ResourceManager.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Scenes">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Scenes.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Serialization">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Serialization.dll</HintPath>
+</Reference>
+<Reference Include="Unity.TextMeshPro">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.TextMeshPro.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Timeline">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Timeline.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Transforms">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Transforms.dll</HintPath>
+</Reference>
+<Reference Include="Unity.Transforms.Hybrid">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.Transforms.Hybrid.dll</HintPath>
+</Reference>
+<Reference Include="Unity.VisualEffectGraph.Runtime">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.VisualEffectGraph.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Unity.VisualScripting.Core">
+  <HintPath>/home/gemdude46/repos/games/treasure-mountain-archipelago/ClientPlugin/game-lib/Unity.VisualScripting.Core.dll</HintPath>
+</Reference>
+  </ItemGroup>
+</Project>
